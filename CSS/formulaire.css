@@ -124,11 +124,11 @@ footer{
 
     box-sizing: border-box;
     width: 100%;
-    padding: 50px 0 50px 15vw;
+    padding: 40px 0 40px 15vw;
 
 
     background-color: #f5f0e1;
-    font-size : 22px ;
+    font-size : 20px ;
     color : #1e3d59
  }
  
@@ -138,12 +138,12 @@ footer div {
     width: fit-content;
 
     padding: 5px;
-    margin : 15px 0 ;
+    margin : 12px 0 ;
 
     font-family: Arial, Helvetica, sans-serif;
  }
  footer div:hover {
-    color : #fd8700
+    color : #fd8700 ;
  }
 
  #lastdiv {
