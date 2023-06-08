@@ -1,0 +1,232 @@
+html {
+    overflow: hidden; /* Empêcher l'apparition des barres de défilement lors d'un débordement  */
+}
+
+body {
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    /* Taille équivalent à 100% de la zone d'affichage */
+    width: 100vw;   
+    height : 100vh;
+
+    margin: 0 ;
+    padding: 0;
+
+    background: linear-gradient( to bottom left, #fd8700 20%,#fd9722 20% 40%,  #fca139 40% 60%, #feaf54 60% 80%, #ffc37f 75%) ;
+
+    /*     background: linear-gradient(170deg, rgba(49, 57, 73, 0.8) 20%, rgba(49, 57, 73, 0.5) 20%, rgba(49, 57, 73, 0.5) 35%, rgba(41, 48, 61, 0.6) 35%, rgba(41, 48, 61, 0.8) 45%, rgba(31, 36, 46, 0.5) 45%, rgba(31, 36, 46, 0.8) 75%, rgba(49, 57, 73, 0.5) 75%), linear-gradient(45deg, rgba(20, 24, 31, 0.8) 0%, rgba(41, 48, 61, 0.8) 50%, rgba(82, 95, 122, 0.8) 50%, rgba(133, 146, 173, 0.8) 100%) #313949; */
+}
+
+
+/* ---- Menu ---- */
+ul {
+    position: relative;
+
+    /* Centrer les élements de la liste */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 0;
+    margin: 0;
+}
+
+li {
+    position: absolute;
+
+    /* Centrer le texte */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    list-style-type: none;
+}
+
+i {
+    color :  #1e3d59
+}
+
+/* Bulle Mon Portfolio */
+li:first-child {
+    position: absolute;
+
+    background-color: #1e3d59;
+
+    color : #f5f0e1 ;
+    font-size: 6vmin ;
+    list-style-type: none;
+    text-align: center;
+
+    width: 45vmin;
+    height : 45vmin ;
+
+    box-sizing: border-box;
+
+    padding: 0;
+    margin: 0;
+    border-radius: 50%;
+}
+li:first-child div {
+    flex-direction: column;
+    align-items: center;
+}
+li:first-child p {
+    margin: 0;
+}
+li:first-child .titre {
+    font-size: 3vmin ;
+    border : none ;
+    border-top: 1px solid #f5f0e1;
+}
+
+
+/* Contour dégradé */
+li:first-child::after {
+    display: block;
+
+    content: '';
+
+    position: absolute;
+    top : -1.2vmin ;
+    bottom : -1.2vmin ;
+    right : -1.2vmin ;
+    left : -1.2vmin ;
+    z-index: -1;
+
+    background: linear-gradient(#ffc37f,#fd8700);
+
+    border-radius: 100%;
+}
+
+/* Tous les éléments li sauf le premier */
+ul li:not(:first-of-type) {
+    z-index: 1;     /* Tous sur la même couche*/
+}
+
+/* Contenu des éléments listes (a + aside)*/
+li div {
+    position: relative;
+
+    display: flex;
+
+    width: fit-content;
+    height: fit-content;
+}
+
+
+/* Liens en bulle */
+a{
+    position: absolute;
+
+    /* Centrer le texte */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color:#f5f0e1;
+    opacity: 0;     /* Invisible en temps normal (cf animation_accueil.css) */
+
+ 
+    text-decoration: none;
+    font-size: 4.8vmin;
+
+    width: 18vmin; 
+    min-width: 90px;
+    height: 18vmin;
+    min-height: 90px ;
+
+    box-sizing: border-box;
+
+    border: 2px solid #1e3d59;
+    border-radius: 100%;
+
+    pointer-events: none;       /* Aucun événement de pointeur */
+}
+
+
+aside {
+    z-index: -1;    /* Mettre le aside sous le a pour que le pointeur fonctionne*/
+
+    display: flex;
+    align-items: center;    /* Centrer verticalement */
+
+    width: calc(18vmin + 12ch) ;
+    min-width: calc(90px + 100px);
+    height : 18vmin;
+    min-height: 90px ;
+
+    background-color: #f5f0e1;
+    opacity: 0;     /* Invisible en temps normal */
+    color:#1e3d59 ;
+    font-size: 3.5vmin;
+
+    margin: 0;
+
+    box-sizing: border-box;
+
+    border : 2px solid #c3c1b7 ; 
+}
+/* "Qui suis-je ?" et "Me contacter" à gauche */
+li:nth-child(2) a, li:nth-child(5) a {
+    right : 0 ; /* Lien bulle à droite */
+}
+li:nth-child(2) aside, li:nth-child(5) aside {
+    justify-content: left;
+    padding: 0 18vmin 0 0.5ch;
+    border-radius: 20px 18vmin 18vmin 20px;
+}
+
+/* "Mes compétences" et "Mes projets" à droite */
+li:nth-child(3) a, li:nth-child(4) a {
+    left : 0 ;  /* Lien bulle à gauche */
+}
+li:nth-child(3) aside, li:nth-child(4) aside {
+    text-align: right;
+    justify-content: right;
+    padding: 0 0.5ch 0 18vmin;
+    border-radius: 18vmin 20px 20px 18vmin;
+}
+
+/* Taille de l'ensemble fixe lorsque la taille de l'écran est restreinte */
+@media screen and ( (width <= 600px) or (height <= 600px)) {
+    /* Bulle Mon Portfolio */
+    li:first-child {
+        width : 300px ;
+        height : 300px ;
+    }
+    li:first-child p {
+        font-size: 40px;
+    }
+    li:first-child .titre {
+        font-size: 20px;
+    }
+    /* Contour dégradé */
+    li:first-child::after {
+        top : -6px ;
+        bottom :  -6px ;
+        right :  -6px ;
+        left :  -6px ;
+    }
+    /* Animation de la bulle principale */
+    ul:hover li:first-child {
+        width : 400px !important;
+        height: 400px !important;
+    }
+    a {
+        font-size: 28px;
+    }
+    aside {
+        font-size: 17px;
+    }
+    li:nth-child(2) aside, li:nth-child(5) aside {
+        padding-right: 90px;
+        border-radius: 20px 90px 90px 20px;
+    }
+    li:nth-child(3) aside, li:nth-child(4) aside {
+        padding-left: 90px;
+        border-radius: 90px 20px 20px 90px;
+    }
+}

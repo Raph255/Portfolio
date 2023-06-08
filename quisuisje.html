@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="'fr">
+    <head>
+	    <meta charset="utf-8">
+        <link rel="stylesheet" href="CSS/header.css">
+        <link rel="stylesheet" href="CSS/aside.css">
+        <link rel="stylesheet" href="CSS/css_quisuisje.css">
+	    <title> Qui suis-je ?</title>
+        <script src="https://kit.fontawesome.com/d974b66ed4.js" crossorigin="anonymous"></script>
+
+        <script>
+            function PointerEnable() {
+            /* Active les liens cliquables  */
+                var elem = document.getElementsByTagName('a') ;
+                for ( i = 1 ; i < elem.length ; i++){
+                    elem[i].style.pointerEvents = 'all'
+                }
+            }
+            function PointerDisable() {
+            /* Désactive les liens cliquables */
+                var elem = document.getElementsByTagName('a') ;
+                for ( i = 1 ; i < elem.length ; i++){
+                    elem[i].style.pointerEvents = 'none'
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <header>
+            <h1> <a href="accueil.html">Mon Portfolio</a></h1>
+            <input id="toggle" type="checkbox"></input>
+            <label for="toggle" class="hamburger">
+                <div class="top-bun"></div>
+                <div class="meat"></div>
+                <div class="bottom-bun"></div>
+            </label>
+
+            <div class="nav">
+                <div class="nav-wrapper">
+                        <div><a href="competences.html" > Mes compétences <img src="Images/competences.png" alt="compétences" style="filter: brightness(0.9);"></a></div>
+                        <div><a href="projets.html">  Mes projets <img src="Images/mesprojets.png" alt="mesprojets" style="filter:brightness(0.8)"></a></div>
+                        <div><a href="mecontacter.html">Me contacter <img src="Images/mecontacter.png" alt="contact" style="filter: brightness(0.9);"></a></div>
+                </div>
+            </div>
+        </header>
+        <main>
+            <input id="btn_bandeau" type="checkbox"></input>
+            <aside id="menu_lateral_profil">
+                <nav>
+                    <img src="Images/profil.jpg" alt="profil" height="200px">
+                    <p> Raphaël PIVOT - 19 ans</p>
+                    <p> 1e année de BUT informatique</p>
+                </nav>
+            </aside>
+            <label id="bandeau" for="btn_bandeau"> <i class="fa-sharp fa-solid fa-play"></i></label>
+        </main>
+    </body>

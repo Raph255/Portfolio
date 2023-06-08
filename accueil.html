@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="fr">
+    
+    <head>
+	    <meta charset="utf-8">
+        <link rel="stylesheet" href="CSS/css_accueil.css">
+        <link rel="stylesheet" href="CSS/animation_accueil.css">
+	    <title>Portfolio</title>
+        <script src="https://kit.fontawesome.com/d974b66ed4.js" crossorigin="anonymous"></script>
+        <script>
+
+            function PointerEnable() {
+               /* Active les liens cliquables  */
+                var elem = document.getElementsByTagName('a') ;
+                for ( i = 0 ; i < elem.length ; i++){
+                    elem[i].style.pointerEvents = 'all'
+                }
+            }
+            function PointerDisable() {
+                /* Désactive les liens cliquables */
+                var elem = document.getElementsByTagName('a') ;
+                for ( i = 0 ; i < elem.length ; i++){
+                    elem[i].style.pointerEvents = 'none'
+                }
+            }
+
+
+
+        </script>
+    </head>
+    <body>
+            <ul onmouseover="setTimeout('PointerEnable()',800)" onmouseout="setTimeout('PointerDisable()',800)">    
+            <!-- Quand survolé, appel de la fonction PointerEnable avec 800ms de délai -->
+            <!-- Quand le survol prend fin, appel de la fonction PointerDisable avec 800ms de délai -->           
+            <!-- 800ms = temps que l'animation de la bulle principale s'achève. Cela empêche de pouvoir cliquer sur les liens avant que l'animation ne soit terminé     -->
+                <li>  <div><p>Mon Portfolio</p><p class="titre">Raphaël PIVOT</p></div></li>
+                <li><div><a href="quisuisje.html" > <i class="fa-solid fa-user"></i></a> <aside> Qui suis-je ? </aside></div></li>
+                <li><div><a href="competences.html"><i class="fa-solid fa-list-ul"></i></a> <aside> Mes compétences </aside></div></li>
+                <li><div><a href="projets.html" ><i class="fa-solid fa-folder-open"></i></a><aside> Mes projets</aside></div></li>
+                <li><div><a href="mecontacter.html"><i class="fa-solid fa-phone"></i></a> <aside>Me contacter </aside></div></li>
+            </ul>
+
+    </body>
+</html>

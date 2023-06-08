@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="'fr"></html>
+    <head>
+	    <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="CSS/header.css">
+        <link rel="stylesheet" href="CSS/css_projets.css">
+        <link rel="stylesheet" href="CSS/aside.css">
+        <link rel="stylesheet" href="CSS/section.css">
+	    <title>Projets</title>
+        
+        <script src="https://kit.fontawesome.com/d974b66ed4.js" crossorigin="anonymous"></script>
+        <script>
+
+            function changementPage(num_cat,num_proj) {
+                
+                /* Déselectionne tous les inputs "catégories du menu"...*/ 
+                var listInput = document.getElementById("menu_lateral_projets").getElementsByTagName('input');
+                for (var i = 0; i < listInput.length; ++i) {
+                            listInput[i].checked = false ; 
+                        }
+                /*...sauf celui contenant le projet affiché */
+                document.getElementById("categorie"+num_cat).checked = true ;
+
+                /** Fenêtre réduite : Bandeau latéral déselectionné lorsqu'un projet est cliqué */
+                document.getElementById("btn_bandeau").checked = false ;
+
+                var projet = document.getElementById('projet' + num_cat + num_proj) ;
+                var bouton = document.getElementById('btn_projet' + num_cat + num_proj) ;  
+
+                /* Enlève la classe actif au précédent bouton "projet" actif et la donne au bouton "projet" cliqué */
+                var boutonactif = document.getElementsByClassName('boutonactif')[0];
+                if (boutonactif != null) {
+                    boutonactif.classList.remove('boutonactif') ;
+                }   
+                bouton.classList.add('boutonactif')
+                
+                document.getElementsByClassName('articleactif')[0].classList.remove('articleactif') ;
+                projet.classList.add('articleactif');
+            }
+
+        </script>
+    </head>
+    <body>
+        <header>
+            <h1> <a href="accueil.html">Mon Portfolio</a></h1>
+            <input id="toggle" type="checkbox"></input>
+            <label for="toggle" class="hamburger">
+                <div class="top-bun"></div>
+                <div class="meat"></div>
+                <div class="bottom-bun"></div>
+            </label>
+
+            <div class="nav">
+                <div class="nav-wrapper">
+                        <div><a href="quisuisje.html" >Qui suis-je ? <img src="Images/quisuisje.png" alt="quisuisje" style="filter: brightness(1);"></a></div>
+                        <div><a href="competences.html">  Mes compétences <img src="Images/competences.png" alt="competences" style="filter: brightness(0.9);"> </a></div>
+                        <div><a href="mecontacter.html">Me contacter<img src="Images/mecontacter.png" alt="contact" style="filter: brightness(0.9);"></a></div>
+                </div>
+            </div>
+
+        </header>
+        <main>
+            <input id="btn_bandeau" type="checkbox"></input>
+
+            <aside id="menu_lateral_projets">
+                <nav>
+                    <ul>
+                        <li class="deroulant">
+                            <input type="checkbox" id="categorie1"></input> 
+                            <label for="categorie1">Développement Web</label>
+                            <ul class="sous">
+                                <li><button id="btn_projet11" onclick="changementPage(1,1)"> Réalisation d'un site web institutionnel</button></li>
+                            </ul>
+                        </li>
+                        <li class="deroulant">
+                            <input id="categorie2" type="checkbox" ></input> 
+                            <label for="categorie2">Base de données</label>
+                            <ul class="sous">
+                                <li>
+                                    <button id="btn_projet21" onclick="changementPage(2,1)"> Etude statistique du naufrage du Titanic</button>
+                                </li>
+                                <li>
+                                    <button id="btn_projet22" onclick="changementPage(2,2)"> Accidentologie en France</button>
+                                </li> 
+                            </ul>
+                        </li>
+                        <li class="deroulant">
+                            <input id="categorie3" type="checkbox" ></input> 
+                            <label for="categorie3">Programmation java</label>
+                            <ul class="sous">
+                                <li><button id="btn_projet31" onclick="changementPage(3,1)"> Classification automatique de dépêches</button></li>
+                            </ul>
+                        </li>
+                            <li class="deroulant">
+                            <input id="categorie4" type="checkbox" ></input> 
+                            <label for="categorie4">Interfaces IHM</label>
+                            <ul class="sous">
+                                <li><button id="btn_projet41" onclick="changementPage(4,1)"> Logiciel de gestion d'évènements</button></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+            </aside>
+            <label id="bandeau" for="btn_bandeau"> <i class="fa-sharp fa-solid fa-play"></i></label>
+
+            <section id="section_projets">
+                <article class="articleactif">
+                        <div class="hero">
+                            <img src="Images/projets51.png" alt="siteweb" style="filter:brightness(1.4)">
+                        </div>
+                        <div class="resume">
+                            <h1> Mes projets</h1>
+                            <div>
+                                <div class="line">
+                                    <h3> Projets universitaires</h3>
+                                    <p> Ces projets sont réalisés dans le cadre de mon parcours universitaire. Ils sont guidés, encadrés par le corps enseignant. Cependant, la majorité du travail se fait en autonomie.</p>
+                                </div>
+                                <div class="line">
+                                    <h3> Projets personnels</h3>
+                                    <p> Ces projets sont réalisés durant mon temps libre pour élargir, approfondir mes connaissances en programmation.  </p>
+                                </div>
+                            </div>
+                        </div>
+                </article>
+
+                <article id="projet11">
+                        <div class="hero">
+                            <img src="Images/econocom51.png" alt="siteweb" style="filter:brightness(1.2)">
+                        </div>
+                        <div class="resume">
+                            <h1> Réalisation d'un site web institutionnel</h1>
+                            <h2> Projet universitaire - janvier 2023</h2>
+                            <div>
+                                <div class="line">
+                                    <h3> Objectif </h3>
+                                    <p> L'objectif était de concevoir puis de produire un site institutionnel d'Econocom, à destination de la génération alpha. Dans une équipe projet de 4 personnes, je devais créer un site sobre écologiquement et visuellement en utilisant les langages HTML, CSS et Javascript. </p>
+                                </div>
+
+                                <div class="line">
+                                        <h3> Ce que j'ai appris </h3>
+                                        <p> J'ai appris à étudier les besoins clients, suivre un cahier des charges et agir en fonction des contraintes. Ce projet m'a initié à l'organisation des phases d'un projet de développement web et j'ai appris à utiliser le logiciel Whimsical. Nommé chef de groupe pour la première fois, cette expérience m'a fait découvrir la gestion de projet et surtout des aléas (retards, désaccords).</p>
+                                </div>
+                                <div class="line">
+                                    <h3> Réussites et échecs </h3>
+                                    <p> Sur le plan technique, mes compétences en codage m'ont permis de réussir le projet. En tant que chef de groupe, j'ai réussi à répartir efficacement les tâches, en tenant compte des compétences de chacun. Néanmoins, le manque de communication lors des conflits a entrainé un retard sur le travail. </p>
+                                </div>
+                        </div>
+                    </div>
+                    <!-- <div class="etapes">
+                        <div>
+                            <h2> Phase 1</h2>
+                            <h3> Recueil de besoins</h3>
+                            <p> Le but de cette phase était de recueillir les informations relatives à l'entreprise et sa transition écologique et numérique. Les informations devaient être réunies dans un dossier, avec un vocabulaire adapté à la génération alpha. Le travail a été séparé en deux binômes. </p>
+                            <p> Après avoir collecté une partie des informations, je me suis occupé de rédiger le recueil, en veillant à ce que le vocabulaire soit approprié. </p>
+                        </div>
+                        <div>
+                            <h2> Phase 2</h2>
+                            <h3> Maquette du site</h3>
+                            <p> Pour visualiser la structure globale du site avant sa réalisation, nous avons réalisé sa maquette Wireframe grâce au logiciel Whimsical. Nous nous sommes donc réunis pour décider de l'aspect de chaque page web.</p>
+                            <p> Chacun s'est alors occupé de concevoir la maquette fil de fer d'une des pages. Whimsical étant un outil collaboratif en ligne, mes camarades et moi avons pu se corriger par ajustement mutuel.</p>
+                        </div>
+                        <div>
+                            <h2> Phase 3</h2>
+                            <h3> Réalisation du site</h3>
+                            <p> Pour cette dernière étape, La répartition des tâches était plus hétérogène. Les éléments plus difficles à coder ont été attribuées aux membres les plus qualifiés. D'un autre côté, il a fallu synthétiser les informations du recueil.  </p>                            
+                            <p> Je me suis occupé de coder le formulaire de contact ainsi que d'une partie de la page sur la transition de l'entreprise. Je me suis aussi assuré du bon comportement du site lors du redimensionnement de la fenêtre.</p>
+                        </div>
+                    </div> -->
+                    
+                </article>
+
+                
+                <article id="projet21">
+                    <div class="hero">
+                        <img src="Images/titanic51.png" alt="titanic" style="filter: brightness(1.1); ">
+                       
+                    </div>
+                    
+                    <div class="resume">
+                        <h1> Etude statistique du naufrage du Titanic</h1>
+                        <h2> Projet universitaire - janvier 2023</h2>
+                        <div>
+                            <div class="line">
+                                <h3> Objectif </h3>
+                                <p> L'objectif de ce projet était de modéliser, implémenter et peupler une base de données à des fins d’etude statistique. Sujet d'étude : Définir les facteurs ayant influencé la survie d’un passager lors du naufrage du Titanic. Le travail, en binôme, devait être réalisé en SQL sous postgresql.</p>
+                            </div>
+                            <div class="line">
+                                <h3> Ce que j'ai appris </h3>
+                                <p> J'ai appris les différentes étapes de la mise en place d’une base de données, de la conception du Schéma Entité-Association à son peuplement. De plus, ce projet m'a permis d'analyser des données, de les interpréter puis de regrouper les résultats obtenus dans un recueil.</p>
+                            </div>
+                            <div class="line">
+                                <h3> Réussites et échecs </h3>
+                                <p> Je suis parvenu à mettre en pratique mes connaissances en SQL dans une situation concrète. Le travail en binôme était facile à gérer tant bien pour la répartition des tâches que pour la communication. La conception de la base de données et la gestion des contraintes furent plus complexes, m’obligeant à être plus patient et à solliciter l'aide de mes camarades.</p></div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- <div class="etapes">
+                        <div>
+                            <h2> Phase 1</h2>
+                            <h3> Modélisation</h3>
+                            <p> Pour établir la structure de la base de données, nous devions réaliser son Schéma Entité-Association (SEA). Le schéma devait être créé en respectant le format des données à utiliser pour peupler la base. Nous avons alors réalisé ce travail ensemble pour décider de la manière la plus optimisée de créer la base. </p>
+                            <p> Ainsi, à la fin du travail, je me suis occupé de rédiger le compte-rendu, expliquant notre SEA et justifiant nos choix.</p>
+                        </div>
+                        <div>
+                            <h2> Phase 2</h2>
+                            <h3> Création et Peuplement</h3>
+                            <p> Cette étape consistait à concevoir la base de données à partir d’un Schéma Logique et Relationnel (SLR) donné. Il fallait veiller aux respects des contraintes des relations et des données pour pouvoir peupler la base. </p>
+                            <p> De mon côté, j’ai réalisé de nombreux tests sur la base pour vérifier la conformité et le respect des contraintes. Quand une erreur apparaissait, j’en informais mon coéquipier qui se chargeait de la création. </p>
+                        </div>
+                        <div>
+                            <h2> Phase 3</h2>
+                            <h3> Analyse et Interprétation</h3>
+                            <p> Afin de répondre à la problématique donnée, nous devions orienter nos réflexions et interroger la base pour extraire les données pertinentes. Les résultats de notre ont ensuite été réunis et expliqués dans un compte-rendu .</p>                            
+                            <p> Nous nous sommes alors réparti les pistes de réflexion pour diviser la charge de travail et gagner du temps. Je me suis occupé des requêtes plus ardues, étant plus à l’aise que mon camarade en interrogation de base de données. </p>
+                        </div>
+                    </div> -->
+                </article>
+
+                
+                <article id="projet22">
+                        <div class="hero">
+                            <img src="Images/accident51.png" alt="accidents" style="filter: brightness(1.4); " >
+                        </div>
+                        <div class="resume">
+                            <h1> Accidentologie en France</h1>
+                            <h2> Projet universitaire - avril 2023 </h2>
+                            <div>
+                                <div class="line">
+                                    <h3> Objectif </h3>
+                                    <p> L'objectif de ce projet était de créer et d'étudier une base de données à des fins de prévention routière. En binôme, notre champ d’étude était les accidents en Hauts-de-France chez les mineurs. Je devais utiliser le langage SQl (postgresql) pour recueillir les données et le langage R pour les analyser. Enfin, un compte-rendu a été rédigé en anglais pour expliquer les résultats de l'étude.</p>
+                                </div>
+                                <div class="line">
+                                    <h3> Ce que j'ai appris </h3>
+                                    <p> Grâce à ce projet, j'ai globalement obtenu les nombreuses compétences nécessaires à une étude statistique. Pour la récolte des données, j'ai appris à les transformer en utilisant des fonctions de modification/formatage de données (trim, regex_replace, date). Pour leur extraction, j'ai su créer des vues et tables temporaires. Quant à l'analyse des données, le logiciel R studio m'a permis de réaliser des graphiques pertinents. </p>
+                                </div>
+                                <div class="line">
+                                    <h3> Réussites et échecs </h3>
+                                    <p> Mes compétences en SQL m’ont permis de créer une base fonctionnelle. Seulement, la transformation des données a été plus compliqué, me reposant beaucoup sur mon camarade. Le langage R a été difficile à prendre en main, mais j’ai su l’utiliser en faisant preuve de patience. </p>
+                                </div>
+                        </div>
+                    </div>
+                    <!-- <div class="etapes">
+                        <div>
+                            <h2> Phase 1</h2>
+                            <h3> Transformation de données brutes</h3>
+                            <p> Les données à disposition devaient être uniformisées et implémentées dans une unique base. Nous avons donc nettoyé, transformé le format et le contenu des données pour qu’elles soient compatibles.  </p>
+                            <p> Cette étape m’a demandé de manipuler un grand nombre de données et de réaliser des requêtes SQL complexes. Je me suis occupé de l’uniformisation des relations recensant les véhicules et les personnes impliqués dans les accidents. </p>
+                        </div>
+                        <div>
+                            <h2> Phase 2</h2>
+                            <h3> Tri des données </h3>
+                            <p> Ensuite, il fallait sélectionner les données relatives à notre sujet d’étude. Nous avons donc regroupé toutes les données relatives aux accidents de Hauts-de-France impliquant des mineurs. </p>
+                            <p> Il a fallu extraire et regrouper les données pertinentes dans des vues et des tables temporaires. Nous nous sommes réparti la charge de travail. Toutefois, nous nous entraidions lorsqu’un de nous rencontrait des difficultés. </p>
+                        </div>
+                        <div>
+                            <h2> Phase 3</h2>
+                            <h3> Etudes des données</h3>
+                            <p>Une fois les données exportées, nous les avons analysées grâce au logiciel R. Cela nous a permis de produire de nombreux graphiques et de rédiger un compte-rendu en anglais, donnant les résultats de notre étude.</p>                            
+                            <p> Etant plus à l’aise que mon coéquipier avec le langage R, je me suis occupé de la majorité des graphiques. Je lui laissais donc la tâche de l’analyse et l’interprétation des graphiques ainsi que de la rédaction du compte-rendu. </p>
+                        </div>
+                    </div> -->
+                </article>
+                
+                <article id="projet31">
+                        <div class="hero">
+                            <img src="Images/classification51.png" alt="classification" style="filter: brightness(1);" >
+                        </div>
+                        <div class="resume">
+                            <h1> Classification automatique de dépêches</h1>
+                            <h2> Projet universitaire - janvier 2023</h2>
+                            <div>
+                                <div class="line">
+                                    <h3> Objectif </h3>
+                                    <p> L'objectif de ce projet était de réaliser un programme de classification automatique de dépêches, le plus fiable et rapide possible. La classification se faisait selon 5 catégories : Environnement-Sciences, Culture, Sports, Economie et Politique. Le programme s’appuyait sur des mots-clés marquant l'appartenance à une catégorie. En binôme, je devais utiliser le langage Java. </p>
+                                </div>
+
+                                <div class="line">
+                                    <h3> Ce que j'ai appris </h3>
+                                    <p> Ce projet m'a initié à l'optimisation de programmes informatiques. En effet, j'ai appris à analyser le comportement d'une méthode, définir sa complexité pour ensuite identifier des solutions techniques. De plus, ce projet m'a appris à faire preuve de beaucoup de patience, à prendre du recul lors d'erreurs et à être minutieux. </p>
+                                </div>
+                                <div class="line">
+                                    <h3> Réussites et échecs </h3>
+                                    <p> Grâce aux compétences en programmation que j’ai acquises, l’optimisation du temps de traitement de l’application informatique a été réussi. Cependant, la fiabilité de la classification ne fut pas parfaite à cause d’une mauvaise gestion des erreurs, retardant le travail. Concernant le travail en binôme, la répartition des tâches et la coordination ont été faciles à gérer. </p>
+                                </div>
+                        </div>
+                    </div>
+                    <!-- <div class="etapes">
+                        <div>
+                            <h2> Phase 1</h2>
+                            <h3> Lexiques manuels </h3>
+                            <p> Cette première étape consistait à programmer la classification à partir de lexiques manuels. Ainsi, nous nous sommes appuyés sur 500 dépêches types pour regrouper, pour chaque catégorie, les mots les plus spécifiques.</p>
+                            <p> Pour ma part, je me suis d’abord chargé de rédiger les lexiques en lisant les dépêches. Pendant ce temps, mon binôme codait les méthodes pour la classification. Ensuite, je l’ai rejoint pour terminer le programme.</p>
+                        </div>
+                        <div>
+                            <h2> Phase 2</h2>
+                            <h3> Lexiques automatiques</h3>
+                            <p> La suite du projet était de générer les lexiques automatiquement. Pour cela, le programme devait parcourir les mots de chaque dépêche pour leur associer un score qui représentait leur degré d’appartenance à la catégorie concernée.</p>
+                            <p> Pour cette étape, nous nous sommes partagé les méthodes à coder. Lorsque des erreurs survenaient, nous nous réunissions pour trouver la solution.</p>
+                        </div>
+                        <div>
+                            <h2> Phase 3</h2>
+                            <h3> Optimisation du programme</h3>
+                            <p> Pour cette dernière étape, , il fallait améliorer la fiabilité et le temps de traitement du programme. Nous devions donc trouver une méthode de classification moins chronophage et déterminer les facteurs de calcul de score les plus optimaux. </p>                            
+                            <p> Pour ma part, je me suis occupé d’analyser la complexité des méthodes afin de potentiellement les optimiser. J’ai donc utilisé des algorithmes moins complexes (recherche dichotomique) pour améliorer le programme.</p>
+                        </div>
+                    </div> -->
+                </article>
+
+                <article id="projet41">
+                        <div class="hero">
+                            <img src="Images/tractorrace.png" alt="logicielgestiondevenements">
+                        </div>
+                        <div class="resume">
+                            <h1> Logiciel de gestion d'évènements</h1>
+                            <h2> Projet universitaire - mai/juin 2023</h2>
+                            <div>
+                                <div class="line">
+                                    <h3> Objectif </h3>
+                                    <p> L'objectif de ce projet était de réaliser un logiciel de gestion d'évènements. Dans une équipe composée de 5 personnes, je devais concevoir des interfaces humains-machines en utilisant javaFX. Le logiciel que nous avons conçu permettait d'organiser des tournois de tracteurs.</p>
+                                </div>
+                                <div class="line">
+                                    <h3> Ce que j'ai appris </h3>
+                                    <p> A venir</p>
+                                </div>
+                                <div class="line">
+                                    <h3> Réussites et échecs </h3>
+                                    <p> A venir</p>
+                                </div>
+                        </div>
+                    </div>
+                    <!-- <div class="etapes">
+                        <div>
+                            <h2> Phase 1</h2>
+                            <h3> Lexiques manuels </h3>
+                            <p> Cette première étape consistait à programmer la classification à partir de lexiques manuels. Ainsi, nous nous sommes appuyés sur 500 dépêches types pour regrouper, pour chaque catégorie, les mots les plus spécifiques.</p>
+                            <p> Pour ma part, je me suis d’abord chargé de rédiger les lexiques en lisant les dépêches. Pendant ce temps, mon binôme codait les méthodes pour la classification. Ensuite, je l’ai rejoint pour terminer le programme.</p>
+                        </div>
+                        <div>
+                            <h2> Phase 2</h2>
+                            <h3> Lexiques automatiques</h3>
+                            <p> La suite du projet était de générer les lexiques automatiquement. Pour cela, le programme devait parcourir les mots de chaque dépêche pour leur associer un score qui représentait leur degré d’appartenance à la catégorie concernée.</p>
+                            <p> Pour cette étape, nous nous sommes partagé les méthodes à coder. Lorsque des erreurs survenaient, nous nous réunissions pour trouver la solution.</p>
+                        </div>
+                        <div>
+                            <h2> Phase 3</h2>
+                            <h3> Optimisation du programme</h3>
+                            <p> Pour cette dernière étape, , il fallait améliorer la fiabilité et le temps de traitement du programme. Nous devions donc trouver une méthode de classification moins chronophage et déterminer les facteurs de calcul de score les plus optimaux. </p>                            
+                            <p> Pour ma part, je me suis occupé d’analyser la complexité des méthodes afin de potentiellement les optimiser. J’ai donc utilisé des algorithmes moins complexes (recherche dichotomique) pour améliorer le programme.</p>
+                        </div>
+                    </div> -->
+                </article>
+
+
+            </section>
+        </main>
+    </body>
+</html>
+
