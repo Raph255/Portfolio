@@ -46,6 +46,21 @@ aside img {
     nav {
         width : 100% ;
     }
+    /** version qui suis-je **/
+    #menu_lateral_profil nav {
+        font-family: 'Times New Roman';
+        color : #f5f0e1 ;
+        font-size: 20px;
+    }
+    #menu_lateral_profil p {
+        margin: 0;
+        padding: 0 20px 20px 20px;
+    }
+    #menu_lateral_profil p:first-of-type {
+        font-size: 26px;
+        margin: 0;
+        padding: 0 15px 20px 15px;
+    }
 
         /* Liste */
         nav ul {
