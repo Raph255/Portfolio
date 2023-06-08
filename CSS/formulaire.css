@@ -74,7 +74,10 @@ textarea {
 
 /* Bouton d'envoi */
 #envoi {
-    display: none;  /* Le bouton n'est pas affiché */
+    display: none;
+}
+
+#btnenvoi {
 
     width : 150px ;
     height : 60px ;
@@ -86,7 +89,7 @@ textarea {
     color: #f5f0e1;
     background-color: #1e3d59;
 }
-#envoi:hover {
+#btnenvoi:hover {
     color : #fd8700    /* Lors du survol */
 }
 
