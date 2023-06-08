@@ -1,0 +1,89 @@
+/* ---- Animation de la bulle principale ("Mon Portfolio") ----*/
+
+ul li:first-child, li:first-child::after {
+    transition: all 700ms ease-in-out;
+}
+ul li:first-child .titre {
+    transition : border 700ms ease-in-out;
+    }
+li:first-child::after {
+    animation: rotating 7s linear infinite;
+}
+/* Grossissement et Transparence */
+
+ul:hover li:first-child {
+    background-color: transparent;
+    color : #1e3d59 ;
+
+    width: 77vmin;
+    height: 77vmin;
+}
+
+ul:hover li:first-child .titre{
+
+   border-top-color : #1e3d59
+
+}
+/* Rotation contour */
+@keyframes rotating {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Disparition du contour*/
+ul:hover li:first-child::after {
+    opacity: 0;
+}
+
+/* ---- Animation des div ---- */
+
+li:not(:first-of-type) div{
+    transition: all 600ms ease-in-out 100ms ;
+}
+aside {
+    transition: all 400ms ; 
+}
+
+/* Déploiement/Placement des div */
+ul:hover li:nth-child(2) div{
+    transform: translate(-80%,-90%);
+}
+ul:hover li:nth-child(3) div{
+    transform : translate(80%,-90%) ;
+}
+ul:hover li:nth-child(4) div{
+    transform : translate(80%,90%) ;
+}
+ul:hover li:nth-child(5) div{
+    transform: translate(-80%,90%);
+}
+
+/* Apparition du aside lorsque a est survolé */
+div a:hover + aside {
+    opacity: 1;
+}
+
+
+/* -- Animations des liens -- */
+
+a, i {
+    transition: background-color 400ms, color 400ms, opacity 700ms ease-in-out 100ms, transform 1.2s ease-in-out ;
+}
+/* Quand survolé */
+a:hover {
+    background-color: #1e3d59;
+
+}
+a:hover i {
+    color : #f5f0e1 ;
+}
+
+/* Apparition */
+ul:hover a{
+    opacity: 1;
+}
+
