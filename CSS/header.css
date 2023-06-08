@@ -102,6 +102,9 @@ overflow: hidden;
 text-align: center;
 width: 100%;
 height: 0%;
+display: flex;
+flex-direction: column;
+justify-content: center;
 background-color: rgba(30, 61, 89);
 top: 0; left: 0; right: 0; bottom: 0;
 overflow: hidden;
@@ -112,20 +115,20 @@ z-index: 4;
 .nav-wrapper {
 position: relative;
 overflow: hidden;
-height: 100%;
+height: 80vh;
 
 display: flex;
 flex-direction: row;
 justify-content: center;
 align-items: center;
-gap : 5vw ;
+gap : 2vw 30vw ;
 flex-wrap: wrap;
 }
 
 
 .nav-wrapper img {
-    width : 20vw ;
-    height : 20vw ; 
+    width : 15vw ;
+    height : 15vw ; 
 }
 
 .nav-wrapper a {
@@ -136,14 +139,19 @@ flex-wrap: wrap;
 position: relative;
 text-decoration: none;
 color: #f5f0e1;
-
-font-size: 3.5vw;
+width: 15vw;
+font-size: 3vw;
 white-space: nowrap;
 
 }
 
 .nav-wrapper a:hover {
-border-bottom: 1px solid #f5f0e1;
+    color : #fd8700
+}
+
+#linkpage {
+    pointer-events: none ;
+    color : #fd8700
 }
 
 
@@ -171,5 +179,9 @@ height: 100vh;
 
     .nav-wrapper a {
         font-size: 5vw;
+    }
+    .nav-wrapper img {
+        width: 30vw;
+        height : 30vw
     }
 }
