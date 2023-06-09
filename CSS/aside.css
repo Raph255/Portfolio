@@ -181,8 +181,6 @@ aside img {
 
 @media screen and (width < 800px) {
 
-
-
     main aside {
         width: 0;
         display: none;
