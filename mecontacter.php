@@ -49,7 +49,7 @@
                     <input type="text" class="champ" name="nom" placeholder="Nom *" required>
                 </div>
                 <div>
-                    <input type="text" class="champ" name="mail" placeholder="Mail *" required>
+                    <input type="text" class="champ" name="mail" id="mail" placeholder="Mail *" required>
                 </div>
                 <div>
                     <input type="text" class="champ" name="objet" placeholder="Objet" >
@@ -80,6 +80,7 @@
                         echo"alert('Votre message a bien été envoyé')";
                     } else echo"alert('Erreur : message non envoyé')";
                     echo"</script>";
+                    header('Location: mecontacter.php');
             }
             ?>
         </main>

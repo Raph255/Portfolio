@@ -53,6 +53,7 @@ form div {
     padding: 20px 4px 20px 4px;
 }
 
+
 /* Ligne :  Prénom Nom */
 form div:first-of-type{
     display: flex;
@@ -66,6 +67,10 @@ form div:first-of-type{
 .champ {
     width : 250px ;
     height: 40px;
+}
+
+form #mail {
+    width : 500px ;
 }
 
 /* Zone de texte */
