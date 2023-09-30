@@ -113,8 +113,9 @@ z-index: 4;
 }
 .nav-wrapper {
 position: relative;
-overflow: hidden;
-height: 80vh;
+overflow-y : auto ;
+height: 100vh;
+padding: 5px;
 
 display: flex;
 flex-direction: row;
@@ -122,6 +123,17 @@ justify-content: center;
 align-items: center;
 gap : 2vw 30vw ;
 flex-wrap: wrap;
+}
+
+.nav-wrapper::-webkit-scrollbar, .nav-wrapper::-webkit-scrollbar {
+    width: 9px;
+    height: 7px;
+    background-color: #1e3d59;
+  }
+
+::-webkit-scrollbar-thumb {
+    background: #c3d4e2; 
+    border-radius : 10px ;
 }
 
 
