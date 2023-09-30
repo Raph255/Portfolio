@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" dir="ltr">
     <head>
 	    <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="CSS/header.css">
@@ -42,31 +42,41 @@
         </header>
         <main>
             <h2> formulaire de <strong>contact</strong> </h2>
-            <form>
+            <form method="post">
                 
                 <div>
-                    <input type="text" class="champ" name="Prenom" placeholder="Prénom">
-                    <input type="text" class="champ" name="Nom" placeholder="Nom">
+                    <input type="text" class="champ" name="prenom" placeholder="Prénom *">
+                    <input type="text" class="champ" name="nom" placeholder="Nom *">
                 </div>
                 <div>
-                    <input type="text" class="champ" name="Email" placeholder="Email *" required>
+                    <input type="text" class="champ" name="email" placeholder="Email *" required>
                 </div>
                 <div>
-                    <input type="text" class="champ" name="Objet" placeholder="Objet *" required>
+                    <input type="text" class="champ" name="objet" placeholder="Objet" required>
                 </div>
                 <div>
-                    <textarea name="Message" id="area" placeholder="Message *" spellcheck="false" 
+                    <textarea name="message" id="area" placeholder="Message *" spellcheck="false" 
                     oninput='this.style.height = "";this.style.height = this.scrollHeight + 3 + "px"' required></textarea>  <!-- Code JavaScript pour la hauteur automatique-->
+                </div>
+                <div>
+
                 </div>
                 <div class="check">
                     <input type="checkbox" name="Check"  onclick="Activer()"><!-- Appel de fonction JS-->
                     J'accepte que mes données soient enregistrées afin que ma demande soit traitée
                 </div>
                 <div id="envoi">
-                    <input type="submit" id="btnenvoi" name="Envoi" value="ENVOYER">
+                    <input type="submit" id="btnenvoi" name="envoi" value="ENVOYER">
                     <p> La partie PHP n'étant pas intégré au site, l'envoi du formulaire ne fonctionne pas.</p>
                 </div>
             </form>
+            <?php
+            if (isset($_POST['message'])) {
+                $retour = mail('raphael.pivot2505@gmail.com', 'Envoi depuis la page Contact', $_POST['message'], 'From: '.$_POST['email'] . "\r\n" .$_POST['prenom']."\r".$_POST['nom'] );
+                if($retour)
+                    echo '<p>Votre message a bien été envoyé.</p>';
+            }
+            ?>
         </main>
         <footer>
             <div> <i class="fa-brands fa-facebook"></i> Facebook</div>
