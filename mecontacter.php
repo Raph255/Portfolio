@@ -45,14 +45,14 @@
             <form method="post">
                 
                 <div>
-                    <input type="text" class="champ" name="prenom" placeholder="Prénom *">
-                    <input type="text" class="champ" name="nom" placeholder="Nom *">
+                    <input type="text" class="champ" name="prenom" placeholder="Prénom *" required>
+                    <input type="text" class="champ" name="nom" placeholder="Nom *" required>
                 </div>
                 <div>
-                    <input type="text" class="champ" name="email" placeholder="Email *" required>
+                    <input type="text" class="champ" name="mail" placeholder="Mail *" required>
                 </div>
                 <div>
-                    <input type="text" class="champ" name="objet" placeholder="Objet" required>
+                    <input type="text" class="champ" name="objet" placeholder="Objet" >
                 </div>
                 <div>
                     <textarea name="message" id="area" placeholder="Message *" spellcheck="false" 
@@ -67,14 +67,19 @@
                 </div>
                 <div id="envoi">
                     <input type="submit" id="btnenvoi" name="envoi" value="ENVOYER">
-                    <p> La partie PHP n'étant pas intégré au site, l'envoi du formulaire ne fonctionne pas.</p>
                 </div>
             </form>
             <?php
             if (isset($_POST['message'])) {
-                $retour = mail('raphael.pivot2505@gmail.com', 'Envoi depuis la page Contact', $_POST['message'], 'From: '.$_POST['email'] . "\r\n" .$_POST['prenom']."\r".$_POST['nom'] );
-                if($retour)
-                    echo '<p>Votre message a bien été envoyé.</p>';
+                $destinaire = "raphael.pivot2505@gmail.com";
+                $objet = "Contact :".$_POST['prenom']."  ".$_POST['nom'].' ( '.$_POST['mail'].' )';
+                $message = $_POST['objet']."\r\n.".str_replace("\n.", "\n..", $_POST['message']);
+                    $retour = mail($destinaire,$objet,$message);
+                    echo"<script language=\"javascript\">";
+                    if($retour) {
+                        echo"alert('Votre message a bien été envoyé')";
+                    } else echo"alert('Erreur : message non envoyé')";
+                    echo"</script>";
             }
             ?>
         </main>
