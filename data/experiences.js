@@ -39,7 +39,7 @@ const detailledExperiencesData = [
     },
     [
         {
-            "image": "/image/exp-enigmathique-homepage.png",
+            "image": "image/exp-enigmathique-homepage.png",
             "title": "Une application existante",
              "description" : `L'objectif de ce projet était d'améliorer et d'optimiser une application existante. Nous devions évaluer la conception,
                                 son ergonomie, les performances et la qualité logicielle afin d'améliorer l'ensemble de ces
@@ -48,19 +48,19 @@ const detailledExperiencesData = [
                                 En parallèle, les étudiants disposaient d'une application mobile pour consulter les offres, y postuler et faire suivre l'évolution des candidatures.`
         },
         {
-            "image": "/image/exp-enigmathique-homepage.png",
+            "image": "image/exp-enigmathique-homepage.png",
             "title": "Une analyse de l'existant",
              "description" : ``
         },
         {
-            "image": "/image/exp-enigmathique-homepage.png",
+            "image": "image/exp-enigmathique-homepage.png",
             "title": "Un projet parti de zéro",
              "description" : ``
         }
     ],
     [
         {
-            "image": "/image/exp-enigmathique-homepage.png",
+            "image": "image/exp-enigmathique-homepage.png",
             "title": "Un projet parti de zéro",
              "description" : `L'objectif de ce projet était de créer, au sein d’une équipe, une application à partir de besoins clients imprécis.
                              Les besoins ? Un outil en ligne ludo-éducatif ou jeu sérieux à destination des élèves de collège ou de lycée. 
@@ -69,7 +69,7 @@ const detailledExperiencesData = [
                              (Base de données, Architecture logicielle, Ergonomie des interfaces) puis réalisé l'application. L'étape de réalisation a duré trois semaines.`
         },
         {
-            "image": "/image/exp-enigmathique-reactor.png",
+            "image": "image/exp-enigmathique-reactor.png",
             "title": "Un jeu vidéo 3D",
             "description" : `Enigmathique est un jeu vidéo ludo-éducatif de mathématiques. 
                             À destination des élèves de seconde, il reprend le principe d'un Escape Game.
@@ -79,7 +79,7 @@ const detailledExperiencesData = [
                             permet aux professeurs de suivre la progression des élèves.`
         },
          {
-            "image": "/image/exp-enigmathique-website.png",
+            "image": "image/exp-enigmathique-website.png",
             "title": "Un site Web",
             "description" : `Le jeu vidéo devait être présenté sous la forme d'un site Web. Tandis que certains s'occupaient de la mise en place du serveur,
                             d'autres ont développé le jeu vidéo en lui-même. Quant à moi, je me suis chargé du design du site, 
