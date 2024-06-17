@@ -6,7 +6,7 @@ const experiencesData = [
         "description" : `En tant que membre de l'équipe de développement, mes missions reposaient sur le développement d'outils internes de l'entreprise, 
                         principalement en Javascript. Ajout d'une fonctionnalité sur le PLM de l'entreprise, 
                         réalisation d'une interface de synchronisation entre deux logiciels de ticketing.`,
-        "image" : "/image/exp-radiall.jpg",        
+        "image" : "image/exp-radiall.jpg",        
     },
     {
         "title" : "Développeur mobile",
@@ -18,7 +18,7 @@ const experiencesData = [
                         Après avoir analysé l'existant, je me suis occupé d'améliorer l'interface. 
                         Pour la logique de l'application, j'ai participé à l'implémentation d'un système de synchronisation des données en arrière-plan, 
                         facilitant la fluidité de l'application.`,
-        "image" : "/image/exp-iut2.png",        
+        "image" : "image/exp-iut2.png",        
     },
     {
         "title" : "Développeur Front-end",
@@ -29,7 +29,7 @@ const experiencesData = [
                         Inspiré du principe de l'Escape Game et de Kahoot, Enigmathique est un jeu collaboratif et compétitif à jouer en classe.
                         Je me suis chargé du design et du développement du site web du jeu, développé en ReactJS. 
                         La réalisation d'Enigmathique nous a valu le prix du prototype à l'IUT2 de Grenoble.`,
-        "image" : "/image/exp-enigmathique.png",        
+        "image" : "image/exp-enigmathique.png",        
     }
 ];
 
@@ -79,7 +79,7 @@ const detailledExperiencesData = [
                             permet aux professeurs de suivre la progression des élèves.`
         },
          {
-            "image": "image/exp-enigmathique-website.png",
+            "image": "image/exp-enigmathique-website.png", 
             "title": "Un site Web",
             "description" : `Le jeu vidéo devait être présenté sous la forme d'un site Web. Tandis que certains s'occupaient de la mise en place du serveur,
                             d'autres ont développé le jeu vidéo en lui-même. Quant à moi, je me suis chargé du design du site, 
